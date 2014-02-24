@@ -1,0 +1,36 @@
+﻿{
+    "manifest_version": 2,
+    "name": "Google old icon",
+    "version": "0.0.1",
+    "description": "Google Search old favicon",
+    "homepage_url": "https://github.com/rafis/google-old-icon",
+
+    "icons": {
+        "16": "img/icon_16.png",
+        "32": "img/icon_32.png",
+        "64": "img/icon_64.png",
+        "128": "img/icon_128.png"
+    },
+
+    "content_scripts": [{
+        "matches": [
+            "http://www.google.com/*",
+            "https://www.google.com/*",
+            "http://www.google.ru/*",
+            "https://www.google.ru/*"
+        ],
+        "js": [
+            "js/content.js"
+        ]
+    }],
+
+    "web_accessible_resources": [
+        "img/favicon.ico"
+    ],
+
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
