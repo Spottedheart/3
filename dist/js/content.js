@@ -1,16 +1,22 @@
-var el = document.querySelectorAll('head link[rel*="icon"]');
+;(function(undefined) {
+    if ( location.href.indexOf('https://www.google.') !== 0 && location.href.indexOf('http://www.google.') !== 0 ) {
+        return;
+    }
 
-// Remove existing favicons
-Array.prototype.forEach.call(el, function (node) {
-    node.parentNode.removeChild(node);
-});
+    var el = document.querySelectorAll('head link[rel*="icon"]');
 
-var icon = chrome.extension.getURL('/img/favicon.ico');
+    // Remove existing favicons
+    Array.prototype.forEach.call(el, function (node) {
+        node.parentNode.removeChild(node);
+    });
 
-// Create new favicon
-var link      = document.createElement('link');
-link.type = 'image/x-icon';
-link.rel  = 'icon';
-link.href = icon;
+    var icon = chrome.extension.getURL('/img/favicon.ico');
 
-document.getElementsByTagName('head')[0].appendChild(link);
+    // Create new favicon
+    var link      = document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel  = 'icon';
+    link.href = icon;
+
+    document.getElementsByTagName('head')[0].appendChild(link);
+})();

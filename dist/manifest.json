@@ -1,7 +1,7 @@
 ﻿{
     "manifest_version": 2,
     "name": "Google old icon",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Google Search old favicon",
     "homepage_url": "https://github.com/rafis/google-old-icon",
 
@@ -14,10 +14,8 @@
 
     "content_scripts": [{
         "matches": [
-            "http://www.google.com/*",
-            "https://www.google.com/*",
-            "http://www.google.ru/*",
-            "https://www.google.ru/*"
+            "http://*/*",
+            "https://*/*"
         ],
         "js": [
             "js/content.js"
